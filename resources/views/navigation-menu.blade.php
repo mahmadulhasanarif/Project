@@ -9,14 +9,14 @@
                         <x-jet-application-mark class="block h-9 w-auto" />
                     </a>
                 </div>
-
+                
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
                 </div>
-                
+                @if (Auth::check() && Auth::user()->email == "admin@gmail.com")
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('quiz_category') }}" :active="request()->routeIs('quiz_category')">
                         {{ __('Category') }}
@@ -43,6 +43,9 @@
                         {{ __('Results') }}
                     </x-jet-nav-link>
                 </div>
+
+                @endif
+                
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('client.test') }}" :active="request()->routeIs('client.test')">
                         {{ __('Exams') }}
@@ -53,6 +56,9 @@
                         {{ __('Contact') }}
                     </x-jet-nav-link>
                 </div>
+
+               
+
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">

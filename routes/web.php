@@ -24,13 +24,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified', 'role:admin'])->group(function () {
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
 
-    // contact route
-    Route::get('contact/delete', [ContactController::class, 'delete'])->name('contact.delete');
+        // contact route
+        Route::get('contact/delete', [ContactController::class, 'delete'])->name('contact.delete');
 
         // Category Route
         Route::get('quiz-category', [CategoryController::class, 'index'])->name('quiz_category');
@@ -63,21 +63,16 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified', '
 });
 
 
-Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified',])->group(function () {
-    Route::get('user/dashboard', function () {
-        return view('quiz.user.dashboard');
-    })->name('dashboard');
+
     
-        // test route
-        Route::get('test',[\App\Http\Controllers\TestController::class, 'index'])->name('client.test');
-        Route::post('test',[\App\Http\Controllers\TestController::class, 'store'])->name('client.test.store');
-        Route::get('results/{result}',[\App\Http\Controllers\ResultController::class, 'show'])->name('client.results.show');
+    // test route
+    Route::get('test',[\App\Http\Controllers\TestController::class, 'index'])->name('client.test');
+    Route::post('test',[\App\Http\Controllers\TestController::class, 'store'])->name('client.test.store');
+    Route::get('results/{result}',[\App\Http\Controllers\ResultController::class, 'show'])->name('client.results.show');
 
-        // Contact Route
-        Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
-        Route::post('contact/store', [ContactController::class, 'store'])->name('contact.store');
-
-});
+    // Contact Route
+    Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
+    Route::post('contact/store', [ContactController::class, 'store'])->name('contact.store');
 
     // Route certificate
     Route::get('certificate', [CertificateController::class, 'index'])->name('certificate.index');
@@ -86,9 +81,5 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified',])
     Route::post('certificate/update/{id}', [CertificateController::class, 'update'])->name('certificate.update');
     Route::get('certificate/delete/{id}', [CertificateController::class, 'delete'])->name('certificate.delete');
     Route::get('certificate/verify/{id}', [CertificateController::class, 'show'])->name('certificate.show');
-
-
     Route::get('certificate/search', [CertificateController::class, 'search'])->name('certificate.search');
-
-    
     Route::get('certificate/verified', [CertificateController::class, 'verified'])->name('certificate.verified');

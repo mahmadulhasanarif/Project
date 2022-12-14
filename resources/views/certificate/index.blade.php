@@ -83,9 +83,9 @@
                                 </div>
                                 
                                     <div class="form-group mb-3">
-                                        <label class="form-label"><b>Category Name</b></label>
+                                        <label class="form-label"><b>Course Name</b></label>
                                         <select class="form-control @error('cat_id') is-invalid @enderror" name="cat_id">
-                                            <option disabled>Select Category</option>
+                                            <option>Select Course</option>
                                             @foreach ($categories as $category)
                                                 <option value="{{ $category->id }}">
                                                     {{ $category->name }}</option>
