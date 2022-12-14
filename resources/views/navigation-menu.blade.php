@@ -16,7 +16,7 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
                 </div>
-
+                
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('quiz_category') }}" :active="request()->routeIs('quiz_category')">
                         {{ __('Category') }}
@@ -30,6 +30,11 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('quiz_option') }}" :active="request()->routeIs('quiz_option')">
                         {{ __('Option') }}
+                    </x-jet-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('certificate.index') }}" :active="request()->routeIs('certificate.index')">
+                        {{ __('Certificate') }}
                     </x-jet-nav-link>
                 </div>
 

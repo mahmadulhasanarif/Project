@@ -23,7 +23,7 @@
 
                     <div class="form-group">
                         <label for="message" class="col-form-label">Option:</label>
-                        <textarea class="form-control" id="up_option_text">{{ $question->option_text }}</textarea>
+                        <textarea class="form-control" id="up_option_text"></textarea>
                     </div>
 
                     <div class="form-group">

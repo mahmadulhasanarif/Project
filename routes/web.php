@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\OptionController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\ResultController;
@@ -22,24 +24,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified', 'role:admin'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
 
-
-    // test route
-    Route::get('test',[\App\Http\Controllers\TestController::class, 'index'])->name('client.test');
-    Route::post('test',[\App\Http\Controllers\TestController::class, 'store'])->name('client.test.store');
-    Route::get('results/{result}',[\App\Http\Controllers\ResultController::class, 'show'])->name('client.results.show');
-
     // contact route
     Route::get('contact/delete', [ContactController::class, 'delete'])->name('contact.delete');
-    Route::group(['middleware' => 'isAdmin',1], function() {
+
         // Category Route
         Route::get('quiz-category', [CategoryController::class, 'index'])->name('quiz_category');
         Route::post('quiz-category/store', [CategoryController::class, 'store'])->name('quiz_category.store');
@@ -67,10 +59,36 @@ Route::middleware([
         Route::get('results/show/{result}', [ResultController::class, 'show'])->name('quiz.result.show');
         Route::resource('quiz/result', ResultController::class)->only('destroy','create');
         Route::delete('results_mass_destroy', [\App\Http\Controllers\ResultController::class, 'massDestroy'])->name('results.mass_destroy');
-    });
+
 });
 
-Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
-Route::post('contact/store', [ContactController::class, 'store'])->name('contact.store');
+
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified',])->group(function () {
+    Route::get('user/dashboard', function () {
+        return view('quiz.user.dashboard');
+    })->name('dashboard');
+    
+        // test route
+        Route::get('test',[\App\Http\Controllers\TestController::class, 'index'])->name('client.test');
+        Route::post('test',[\App\Http\Controllers\TestController::class, 'store'])->name('client.test.store');
+        Route::get('results/{result}',[\App\Http\Controllers\ResultController::class, 'show'])->name('client.results.show');
+
+        // Contact Route
+        Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
+        Route::post('contact/store', [ContactController::class, 'store'])->name('contact.store');
+
+});
+
+    // Route certificate
+    Route::get('certificate', [CertificateController::class, 'index'])->name('certificate.index');
+    Route::post('certificate/store', [CertificateController::class, 'store'])->name('certificate.store');
+    Route::get('certificate/{certificate}/edit', [CertificateController::class, 'edit'])->name('certificate.edit');
+    Route::post('certificate/update/{id}', [CertificateController::class, 'update'])->name('certificate.update');
+    Route::get('certificate/delete/{id}', [CertificateController::class, 'delete'])->name('certificate.delete');
+    Route::get('certificate/verify/{id}', [CertificateController::class, 'show'])->name('certificate.show');
 
 
+    Route::get('certificate/search', [CertificateController::class, 'search'])->name('certificate.search');
+
+    
+    Route::get('certificate/verified', [CertificateController::class, 'verified'])->name('certificate.verified');
