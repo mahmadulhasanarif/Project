@@ -28,7 +28,9 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+});
 
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified', 'role:admin'])->group(function () {
         // contact route
         Route::get('contact/delete', [ContactController::class, 'delete'])->name('contact.delete');
 
@@ -64,7 +66,6 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
 
 
-    
     // test route
     Route::get('test',[\App\Http\Controllers\TestController::class, 'index'])->name('client.test');
     Route::post('test',[\App\Http\Controllers\TestController::class, 'store'])->name('client.test.store');

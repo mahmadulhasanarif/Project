@@ -18,8 +18,8 @@
             <div class="col-md-4"></div>
             <div class="col-md-4 mt-5">
                 @if (session('message'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('message') }}
+                    <div class="alert alert-danger" role="alert">
+                        <b style="font-size: 30px">{{ session('message') }}</b>
                     </div>
                 @endif
             </div>

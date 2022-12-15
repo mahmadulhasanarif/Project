@@ -67,9 +67,6 @@
                             Communication IT Certificate
                         </div>
             
-                        <div class="assignment">
-                            {{$certificate->Category->name}}
-                        </div>
             
                         <div class="person">
                             {{$certificate->name}}

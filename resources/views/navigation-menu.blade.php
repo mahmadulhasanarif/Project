@@ -32,12 +32,7 @@
                         {{ __('Option') }}
                     </x-jet-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('certificate.index') }}" :active="request()->routeIs('certificate.index')">
-                        {{ __('Certificate') }}
-                    </x-jet-nav-link>
-                </div>
-
+               
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('admin.results.index') }}" :active="request()->routeIs('admin.results.index')">
                         {{ __('Results') }}
@@ -45,6 +40,13 @@
                 </div>
 
                 @endif
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('certificate.index') }}" :active="request()->routeIs('certificate.index')">
+                        {{ __('Certificate') }}
+                    </x-jet-nav-link>
+                </div>
+
                 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('client.test') }}" :active="request()->routeIs('client.test')">
