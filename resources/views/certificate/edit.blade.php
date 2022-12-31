@@ -1,61 +1,53 @@
-<x-app-layout>
-    <!doctype html>
-    <html lang="en">
-      <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    
-        <title>Certificate Verification</title>
-      </head>
-      <body>
-    <div class="py-12">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
-                    <form method="POST" action="{{ route('certificate.update', $certificate->id) }}">
-                        @csrf
-                        <div class="mb-3">
-                            <label class="form-label"><b>Studnet Name</b></label>
-                            <input type="text"  class="form-control @error('name') is-invalid @else is-valid @enderror" name="name" value="{{ old('name', $certificate->name) }}">
-                            @error('name')
-                                <span class="text-danger"> {{ $message }} </span>
-                            @enderror
+@extends('backend.master')
+@section('content')
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-8">
+                <div class="card"><br><br>
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-7">
+                                <h4><b>Certificate Edit</b></h4>
+                            </div>
                         </div>
-
-                        <div class="mb-3">
-                            <label class="form-label"><b>ID Gen</b></label>
-                            <input type="text"  class="form-control @error('gen_id') is-invalid @else is-valid @enderror" name="gen_id" value="{{ old('gen_id', $certificate->gen_id) }}">
-                            @error('gen_id')
-                                <span class="text-danger"> {{ $message }} </span>
-                            @enderror
-                        </div>
+                    </div>
+                    <div class="card-body">
                         
-                        <div class="form-group">
-                            <label class="form-label"><b>Category Name</b></label>
-                            <select class="form-control @error('cat_id') is-invalid @enderror" name="cat_id">
-                                <option disabled>Select Category</option>
-                                @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}" {{ $category->id == $certificate->cat_id ? 'selected': '' }}>
-                                        {{ $category->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
+                        <form method="POST" action="{{ route('certificate.update', $certificate->id) }}">
+                            @csrf
 
-                        <button type="submit" class="btn btn-outline-primary">Submit</button>
-                    </form>
+                            <div class="form-group mb-3">
+                                <input type="text" value="{{ old('name', $certificate->name) }}" placeholder="Student Name" class="form-control" name="name">
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <input type="text" value="{{ old('gen_id', $certificate->gen_id) }}" placeholder="Student ID Generate" class="form-control" name="gen_id">
+                            </div>
+                            
+                                <div class="form-group mb-3">
+                                    <select class="form-control" name="cat_id">
+                                        <option>Select Course</option>
+                                        @foreach ($categories as $category)
+                                            <option value="{{ $category->id }}" {{$category->id == $certificate->cat_id ? 'selected': ''}}>
+                                                {{ $category->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            
+                            
+                            <button type="submit" class="btn btn-outline-primary">Submit</button>
+                        </form>
+                    </div>
                 </div>
-                <div class="col-md-3"></div>
-            </div>
-        </div>
+            </div> 
+        </div> 
     </div>
+</div>
+@endsection
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  </body>
-</html>
-</x-app-layout>
+
+
+

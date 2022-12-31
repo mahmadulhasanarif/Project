@@ -42,6 +42,6 @@ class TestController extends Controller
 
         $result->questions()->sync($questions);
 
-        return redirect()->route('client.results.show', $result->id);
+        return redirect()->route('client.results.show', $result->id)->with('message', 'Data Submitted Successfully');
     }
 }

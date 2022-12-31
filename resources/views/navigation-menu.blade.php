@@ -54,6 +54,11 @@
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('admin.blog.index') }}" :active="request()->routeIs('admin.blog.index')">
+                        {{ __('Blogs') }}
+                    </x-jet-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('contact.index') }}" :active="request()->routeIs('contact.index')">
                         {{ __('Contact') }}
                     </x-jet-nav-link>

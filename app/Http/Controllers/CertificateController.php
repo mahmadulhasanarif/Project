@@ -16,6 +16,11 @@ class CertificateController extends Controller
         $certificates = Certificate::latest()->paginate(5);
         return view('certificate.index', compact('certificates', 'categories'));
     }
+    public function create()
+    {
+        $categories = Category::all();
+        return view('certificate.create', compact('categories'));
+    }
 
     public function store(Request $request){
         $request->validate([
@@ -31,7 +36,7 @@ class CertificateController extends Controller
             'created_at'=>Carbon::now()
         ]);
         Session::flash('message', 'Create Successfully');
-        return redirect()->back();
+        return redirect()->route('certificate.index');
     }
 
     public function edit(Certificate $certificate){

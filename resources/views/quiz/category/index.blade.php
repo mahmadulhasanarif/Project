@@ -1,82 +1,58 @@
-<x-app-layout>
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Laravel 9 and Ajax Crud</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" 
-    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
-    
-</head>
-  <body>
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <div class="card mt-3">
-                <div class="card-header">
-                    <div class="row">
-                        <div class="col-md-7">
-                            <marquee class="text-danger"><h4><b>Category Index table</b></h4></marquee>
-                        </div>
-                        <div class="col-md-5">
-                            <div class="row">
-                                <div class="col-md-3 my-1"><b class="text-success">Search:</b></div>
-                                <div class="col-md-9"><input type="text" id="search" class="form-control" placeholder="Enter search here.."></div>
+@extends('backend.master')
+@section('content')
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-8">
+                <div class="card"><br><br>
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <h4><b>Category Index table</b></h4>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="row">
+                                    <div class="col-md-3 my-1"><b class="text-success">Search:</b></div>
+                                    <div class="col-md-9"><input type="text" id="search" class="form-control" placeholder="Enter search here.."></div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="card-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                <th scope="col">SL NO</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Created_AT</th>
+                                <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($categories as $category)
+                                <tr>
+                                <th scope="row">{{ $categories->firstItem()+$loop->index }}</th>
+                                <td>{{ $category->name }}</td>
+                                <td>{{ Carbon\Carbon::parse($category->created_at)->diffforHumans() }}</td>
+                                <td>
+                                    <a href="{{route('quiz_category.edit',$category->id)}}" class="btn btn-success updateButton">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+                                    <a href="{{route('quiz_category.delete', $category->id)}}" class="btn btn-danger">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </a>
+                                </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                            </table>
+                            {{ $categories->links() }}
+                    </div>
                 </div>
-                <div class="card-body">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                            <th scope="col">SL NO</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Created_AT</th>
-                            <th scope="col">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($categories as $category)
-                            <tr>
-                            <th scope="row">{{ $categories->firstItem()+$loop->index }}</th>
-                            <td>{{ $category->name }}</td>
-                            <td>{{ Carbon\Carbon::parse($category->created_at)->diffforHumans() }}</td>
-                            <td>
-                                <button type="button" class="btn btn-success updateButton"
-                                data-bs-toggle="modal" data-bs-target="#updateModal"
-                                data-id = "{{ $category->id }}",
-                                data-name = "{{ $category->name }}">
-                                    <i class="fa-solid fa-pen-to-square"></i>
-                                </button>
-                                <button type="button" id="deleteButton" class="btn btn-danger deleteButton"
-                                data-id={{ $category->id }} ><i class="fa-solid fa-xmark"></i></button>
-                            </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                        </table>
-                        {{ $categories->links() }}
-                </div>
-            </div>
-        </div>
-    <div class="col-md-2 mt-3"><button type="submit" class="btn btn-success addModalButton" data-bs-toggle="modal" data-bs-target="#addModal">Add Category</button></div>
+            </div> 
+            <div class="col-lg-3"><a href="{{route('quiz_category.create')}}" class="btn btn-success">Add Category</a></div>
+        </div> 
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
-     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-    <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
-    @include('quiz.category.script')
-    @include('quiz.category.addModal')
-    @include('quiz.category.editModal')
-    {!! Toastr::message() !!}
-</body>
-</html>
-</x-app-layout>
+</div>
+@endsection

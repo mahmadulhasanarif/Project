@@ -15,6 +15,13 @@ class QuestionController extends Controller
         $questions = Question::latest()->paginate(5);
         return view('quiz.question.index', compact('questions', 'categories'));
     }
+
+    public function create()
+    {
+        $categories = Category::all();
+        return view('quiz.question.create', compact('categories'));
+    }
+
     public function store(Request $request)
     {
         $request->validate(
@@ -34,35 +41,31 @@ class QuestionController extends Controller
             'created_at' => Carbon::now()
         ]);
 
-        return response()->json([
-            'status' => 'success'
-        ]);
+        return redirect()->route('quiz_question')->with('message', 'Question Insert Successfully');
     }
 
-    public function update(Request $request)
+    
+    public function edit($id)
     {
-        Question::where('id', $request->up_id)->update([
-            'category_id' => $request->up_category_id,
-            'question_text' => $request->up_question_text,
+        $question = Question::find($id);
+        $categories = Category::all();
+        return view('quiz.question.edit', compact('categories', 'question'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        Question::find($id)->update([
+            'category_id' => $request->category_id,
+            'question_text' => $request->question_text,
             'updated_at' => Carbon::now(),
         ]);
 
-        return response()->json([
-            'status' => 'success'
-        ]);
+        return redirect()->route('quiz_question')->with('message', 'Question Updated Successfully');
     }
 
-    public function delete(Request $request)
+    public function delete($id)
     {
-        Question::find($request->question_id)->delete();
-        return response()->json([
-            'status' => 'success'
-        ]);
-    }
-
-    public function paginate()
-    {
-        $questions = Question::latest()->paginate(5);
-        return view('quiz.question.paginate', compact('questions'));
+        Question::find($id)->delete();
+        return redirect()->back()->with('message', 'Question Deleted Successfully');
     }
 }
