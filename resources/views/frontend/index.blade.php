@@ -85,7 +85,7 @@
             </div>
             <div class="col-xl-7 col-lg-6">
                 <div class="img-holder mb-50">
-                    <img src="{{asset('frontend/assets/images/Untitled-2 (1).jpg')}}" alt="Image">
+                    <img src="{{asset('frontend/assets/images/about/About-Page (1).jpg')}}" alt="Image">
                 </div>
             </div>
         </div>

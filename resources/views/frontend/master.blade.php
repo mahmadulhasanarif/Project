@@ -102,7 +102,7 @@
                                             <li><a href="{{route('software.service')}}">Software Service</a></li>
                                         </ul>
                                     </li>
-                                    <li class="menu-item"><a href="#">Traning</a></li>
+                                    <li class="menu-item"><a href="{{route('traning.index')}}">Traning</a></li>
                                     <li class="menu-item"><a href="{{route('blog')}}">Blog</a></li>
                                    
                                     <li class="menu-item"><a href="{{route('about')}}">About</a></li>

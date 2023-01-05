@@ -4,12 +4,17 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CourseCategoryController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\frontend\HomeController;
+use App\Http\Controllers\InstractorController;
+use App\Http\Controllers\LessonController;
 use App\Http\Controllers\OptionController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\ResultController;
+use App\Http\Controllers\SeminerController;
+use App\Http\Controllers\TraningController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,9 +28,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -35,6 +37,7 @@ Route::middleware([
         return view('backend.index');
     })->name('dashboard');
 });
+
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
         /// User Profile and Change Password 
@@ -94,7 +97,6 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified', '
         Route::delete('results_mass_destroy', [\App\Http\Controllers\ResultController::class, 'massDestroy'])->name('results.mass_destroy');
 
         // Blog Route  
-
         Route::get('admin-blog', [BlogController::class, 'index'])->name('admin.blog.index');
         Route::get('admin-blog-create', [BlogController::class, 'create'])->name('admin.blog.create');
         Route::post('admin-blog-store', [BlogController::class, 'store'])->name('admin.blog.store');
@@ -102,10 +104,50 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified', '
         Route::post('admin/blog/update/{id}', [BlogController::class, 'update'])->name('admin.blog.update');
         Route::get('admin/blog/delete/{id}', [BlogController::class, 'delete'])->name('admin.blog.delete');
 
+        // Course Category Route  
+        Route::get('course-category', [CourseCategoryController::class, 'index'])->name('course.category.index');
+        Route::get('course-category-create', [CourseCategoryController::class, 'create'])->name('course.category.create');
+        Route::post('course-category-store', [CourseCategoryController::class, 'store'])->name('course.category.store');
+        Route::get('course-category-{category}-edit', [CourseCategoryController::class, 'edit'])->name('course.category.edit');
+        Route::post('course-category-update-{id}', [CourseCategoryController::class, 'update'])->name('course.category.update');
+        Route::get('course-category-delete-{id}', [CourseCategoryController::class, 'delete'])->name('course.category.delete');
+
+        // Course Route  
+        Route::get('course', [CourseController::class, 'index'])->name('course.index');
+        Route::get('course-create', [CourseController::class, 'create'])->name('course.create');
+        Route::post('course-store', [CourseController::class, 'store'])->name('course.store');
+        Route::get('course-{courses}-edit', [CourseController::class, 'edit'])->name('course.edit');
+        Route::get('course-show-{id}', [CourseController::class, 'show'])->name('course.show');
+        Route::post('course-update-{id}', [CourseController::class, 'update'])->name('course.update');
+        Route::get('course-delete-{id}', [CourseController::class, 'delete'])->name('course.delete');
+
+        // Lesson Route  
+        Route::get('lesson', [LessonController::class, 'index'])->name('lesson.index');
+        Route::get('lesson-create', [LessonController::class, 'create'])->name('lesson.create');
+        Route::post('lesson-store', [LessonController::class, 'store'])->name('lesson.store');
+        Route::get('lesson-{lesson}-edit', [LessonController::class, 'edit'])->name('lesson.edit');
+        Route::get('lesson-show-{id}', [LessonController::class, 'show'])->name('lesson.show');
+        Route::post('lesson-update-{id}', [LessonController::class, 'update'])->name('lesson.update');
+        Route::get('lesson-delete-{id}', [LessonController::class, 'delete'])->name('lesson.delete');
+
+        // Instractor Route  
+        Route::get('instractor', [InstractorController::class, 'index'])->name('instractor.index');
+        Route::get('instractor-create', [InstractorController::class, 'create'])->name('instractor.create');
+        Route::post('instractor-store', [InstractorController::class, 'store'])->name('instractor.store');
+        Route::get('instractor-{instractor}-edit', [InstractorController::class, 'edit'])->name('instractor.edit');
+        Route::post('instractor-update-{id}', [InstractorController::class, 'update'])->name('instractor.update');
+        Route::get('instractor-delete-{id}', [InstractorController::class, 'delete'])->name('instractor.delete');
+
+        // seminer Route  
+        Route::get('seminer', [SeminerController::class, 'index'])->name('seminer.index');
+        Route::get('seminer-delete-{id}', [LessonController::class, 'delete'])->name('seminer.delete');
+
 });
 
+ // seminer Route 
+    Route::post('seminer-store', [SeminerController::class, 'store'])->name('seminer.store');
 
-
+      
     // test route
     Route::get('test',[\App\Http\Controllers\TestController::class, 'index'])->name('client.test');
     Route::post('test',[\App\Http\Controllers\TestController::class, 'store'])->name('client.test.store');
@@ -129,7 +171,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified', '
 
 
     // frontend part
-    Route::get('/home', [HomeController::class, 'index'])->name('index');
+    Route::get('/', [HomeController::class, 'index'])->name('index');
     Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
     Route::post('contact-store', [HomeController::class, 'store'])->name('contact.store');
     Route::get('/software-service', [HomeController::class, 'software'])->name('software.service');
@@ -141,4 +183,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified', '
     Route::get('/blog-details-{id}', [HomeController::class, 'blogDetails'])->name('blog.details');
 
     //Traning Part
-    
+    Route::get('traning-index', [TraningController::class, 'index'])->name('traning.index');
+    Route::get('traning-course', [TraningController::class, 'course'])->name('traning.course');
+    Route::get('traning-course-id', [TraningController::class, 'courseDetails'])->name('traning.course.details');
+    Route::get('traning-event', [TraningController::class, 'event'])->name('traning.event');

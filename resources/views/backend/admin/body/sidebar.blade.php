@@ -54,18 +54,20 @@ $user = App\Models\User::find($id);
                             </li>
 
 
+                           
+
+
+
+
+                            <li class="menu-title">Pages</li>
+                            
+                            @if (Auth::check() && Auth::user()->email == "admin@gmail.com")
                             <li>
                                 <a href="{{route('admin.results.index')}}" class=" waves-effect">
                                     <i class="ri-profile-line"></i>
                                     <span>Result</span>
                                 </a>
                             </li>
-
-
-
-
-                            <li class="menu-title">Pages</li>
-
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
                                     <i class="ri-layout-3-line"></i>
@@ -119,6 +121,33 @@ $user = App\Models\User::find($id);
                                 </ul>
                             </li>
 
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="ri-bar-chart-line"></i>
+                                    <span>cadfa</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="charts-apex.html">Apex Charts</a></li>
+                                    <li><a href="charts-chartjs.html">Chartjs Charts</a></li>
+                                    <li><a href="charts-flot.html">Flot Charts</a></li>
+                                    <li><a href="charts-knob.html">Jquery Knob Charts</a></li>
+                                    <li><a href="charts-sparkline.html">Sparkline Charts</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="ri-pencil-ruler-2-line"></i>
+                                    <span>Courses</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{route('course.category.index')}}">category</a></li>
+                                    <li><a href="{{route('course.index')}}">Course</a></li>
+                                    <li><a href="{{route('lesson.index')}}">Lesson</a></li>
+                                    <li><a href="{{route('instractor.index')}}">Instractor</a></li>
+                                </ul>
+                            </li>
+
 
                             <li>
                                 <a href="{{route('contact.index')}}" class=" waves-effect">
@@ -126,6 +155,7 @@ $user = App\Models\User::find($id);
                                     <span>Contact</span>
                                 </a>
                             </li>
+                            @endif
                          
 
                         </ul>

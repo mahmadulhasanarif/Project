@@ -6,7 +6,7 @@ use App\Models\Blog;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-use \Image;
+use Image;
 
 class BlogController extends Controller
 {
@@ -27,18 +27,18 @@ class BlogController extends Controller
             'image'=>'required|mimes:png,jpg,jpeg,pdf,svg'
         ]);
 
-        $image = $request->file('image');
-        $imgName = hexdec(uniqid()).'.'.strtolower($image->getClientOriginalExtension());
-        // Image::make($image)->resize(770, 450)->save('images/blog/'.$imgName);
-        $imgUp = 'images/blog/';
-        $imageReq = $imgUp.$imgName;
-        $image->move($imgUp, $imgName);
+
+        $images = $request->file('image');
+
+        $name = hexdec(uniqid()).'.'.strtolower($images->getClientOriginalExtension());
+        Image::make($images)->resize(770,450)->save('images/blog/'.$name);
+        $reqImage = 'images/blog/'.$name;
 
         Blog::insert([
             'title'=>$request->title,
             'sort_desc'=>$request->sort_desc,
             'long_desc'=>$request->long_desc,
-            'image'=> $imageReq,
+            'image'=> $reqImage,
             'created_at'=>Carbon::now(),
         ]);
 
@@ -52,24 +52,21 @@ class BlogController extends Controller
 
     public function update(Request $request, $id)
     {
-        $image = $request->file('image');
+        $images = $request->file('image');
 
-        if($image){
+        if($images){
             $old_image = $request->old_image;
             unlink($old_image);
-            $image_id = hexdec(uniqid());
-            $image_ext = strtolower($image->getClientOriginalExtension());
-            $image_name = $image_id.'.'.$image_ext;
-            $image_path = 'images/blog/';
-            $image_req = $image_path.$image_name;
-            $image->move($image_path,$image_name);
+            $name = hexdec(uniqid()).'.'.strtolower($images->getClientOriginalExtension());
+            Image::make($images)->resize(770,450)->save('images/blog/'.$name);
+            $reqImage = 'images/blog/'.$name;
          
 
             Blog::find($id)->update([
                 'title'=>$request->title,
                 'sort_desc'=>$request->sort_desc,
                 'long_desc'=>$request->long_desc,
-                'image'=>$image_req,
+                'image'=>$reqImage,
                 'updated_at'=>Carbon::now()
             ]);
             Session::flash('message', "Blog Updated Successfully");

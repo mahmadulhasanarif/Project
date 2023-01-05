@@ -27,7 +27,7 @@
                                 <div class="b-user-admin d-flex justify-content-end">
                                     <a href="{{route('blog.details',$blog->id)}}" class="d-inline-flex align-items-center">
                                         <div class="thumb"><img src="{{'frontend/assets/images/blog/user-1.jpg'}}" alt="USer Image"></div>
-                                        <span>{{Auth::user()->name}}</span>
+                                        <span>Super Admin</span>
                                     </a>
                                 </div>
                                 <div class="post-meta">

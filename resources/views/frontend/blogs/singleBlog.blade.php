@@ -26,11 +26,7 @@
                                 <div class="b-user-admin d-flex justify-content-end">
                                     <a href="#" class="d-inline-flex align-items-center">
                                         <div class="thumb"><img src="{{asset($blog->image)}}" alt="USer Image"></div>
-                                        <span>@if (Auth::user()->name)
-                                            {{Auth::user()->name}}
-                                        @else
-                                            Admin
-                                        @endif</span>
+                                        <span>Supper Admin</span>
                                     </a>
                                 </div>
                                 <div class="post-meta">
