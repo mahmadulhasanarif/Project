@@ -31,7 +31,7 @@ class BlogController extends Controller
         $images = $request->file('image');
 
         $name = hexdec(uniqid()).'.'.strtolower($images->getClientOriginalExtension());
-        Image::make($images)->resize(770,450)->save('images/blog/'.$name);
+        Image::make($images)->resize(1200,1200)->save('images/blog/'.$name);
         $reqImage = 'images/blog/'.$name;
 
         Blog::insert([
@@ -58,7 +58,7 @@ class BlogController extends Controller
             $old_image = $request->old_image;
             unlink($old_image);
             $name = hexdec(uniqid()).'.'.strtolower($images->getClientOriginalExtension());
-            Image::make($images)->resize(770,450)->save('images/blog/'.$name);
+            Image::make($images)->resize(1200,1200)->save('images/blog/'.$name);
             $reqImage = 'images/blog/'.$name;
          
 

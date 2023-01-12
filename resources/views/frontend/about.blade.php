@@ -20,20 +20,17 @@
                 <div class="about-content-box mb-50">
                     <div class="section-title mb-25">
                         <span style="background-color: #F16D24" class="sub-title sub-title-bg blue-light-bg">what  we  offer</span>
-                        <h2>We Care IT Business
-                            to Made Great Success </h2>
+                        <h2>Best IT Service for your Growth 🎯</h2>
                     </div>
-                    <p>Sed perspiciatis unde omnis natus voluptate accusantie 
-                        doloremque laudantium totam rem aperiam eaque quaea
-                        vtore eritatis quasi architecto beatae vitae</p>
+                    <p>"Communication IT" Company  is working on IT Services, Software Services, IT Training, and IT Consultancy for local & corporate clients. Communication IT Training Institute is a part of Communication IT company.</p>
                     <blockquote class="quote-content mb-35">
-                        Unde omnis natus voluptate accusantie doloremqu dan totam rem aperiam eaque quaea vtore eritatis
+                        Let's open the IT world
                     </blockquote>
                     <ul class="check-list list-circle-bg mb-20">
-                        <li>Professional Services</li>
-                        <li>Experience Advisors</li>
-                        <li>Software Development</li>
-                        <li>Product Engineering</li>
+                        <li>IT Services</li>
+                        <li>Software services</li>
+                        <li>IT World</li>
+                        <li>IT Consultancy</li>
                     </ul>
                     <a href="{{route('software.service')}}" class="main-btn btn btn-red">learn about more</a>
                 </div>
@@ -44,7 +41,7 @@
                         <div class="col-lg-6">
                             <div class="experience-box">
                                 <div class="year">
-                                    <h2>25</h2>
+                                    <h2>3</h2>
                                 </div>
                             </div>
                             <div class="img-holder">

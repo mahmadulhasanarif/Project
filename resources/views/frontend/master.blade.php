@@ -51,7 +51,12 @@
                         <div class="col-lg-6">
                             <div class="top-left">
                                 <ul>
-                                    <li><span><i class="far fa-map-marker-alt"></i>Sector# 09, Uttara, Dhaka</span></li>
+                                    <li>
+                                        <a href="https://www.google.com/maps/place/Communication+IT+(CmIT)/@23.
+                                        8663066,90.3691446,15z/data=!4m19!1m13!4m12!1m3!2m2!1d90.3974258!2d23.8743517!1m6!1m2!1s0x3755c5cb11303719:0xc1384c85422a4186!2sCommunication+IT+(CmIT),
+                                        +Plot%234+(Amin+Tower),+Road%2301A,+Level%2301,+Dhaka+1230!2m2!1d90.3997048!2d23.8748649!3e0!3m4!1s0x3755c5cb11303719:0xc1384c85422a4186!8m2!3d23.8748649!4d90.3997048">
+                                        <i class="far fa-map-marker-alt"></i><span>Sector# 09, Uttara, Dhaka</span></a>
+                                    </li>
                                     <li><span><i class="far fa-envelope"></i><a href="mailto:communicationitbd@gmail.com">communicationitbd@gmail.com</a></span></li>
                                 </ul>
                             </div>
@@ -95,7 +100,7 @@
                                 <ul>
                                     <li class="menu-item"><a href="{{route('index')}}">Home</a></li>
                                     
-                                    <li class="menu-item has-children"><a href="{{route('software.service')}}">Services</a>
+                                    <li class="menu-item has-children"><a>Services</a>
                                         <ul class="sub-menu">
                                             <li>
                                                 <a href="{{route('it.service')}}">IT Services</a></li>
@@ -113,13 +118,7 @@
                         </div>
                         <div class="header-right-nav">
                             <ul>
-                                <li class="cart-item"><a href="#"><i class="fas fa-shopping-basket"></i></a></li>
-                                <li class="lang-dropdown">
-                                    <select class="wide">
-                                        <option value="01">English</option>
-                                        <option value="02">Bangla</option>
-                                    </select>
-                                </li>
+                                
                                 <li class="nav-button"><a href="{{route('contact')}}" class="main-btn">Contact Us</a></li>
                                 <li class="navbar-toggle-btn">
                                     <div class="navbar-toggler">
@@ -150,8 +149,7 @@
                                     <a href="#"><img src="{{asset('frontend/assets/images/56-PNG.png')}}" alt="Theme Logo"></a>
                                 </div>
                                 <div class="about-content">
-                                    <h4 class="text-underline">Don’t Hesited to Conatct 
-                                        With Our Experites</h4>
+                                    <h4 class="text-underline">Let's Open the it world</h4>
                                     <ul>
                                         <li><i class="far fa-phone"></i><span><a href="tel:+08801894620088">01894620088</a></span></li>
                                         <li><i class="far fa-envelope"></i><span><a href="mailto:info@communicationit.com">info@communicationit.com</a></span></li>

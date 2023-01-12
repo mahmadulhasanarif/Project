@@ -8,11 +8,11 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-9">
                         <div class="hero-content text-center">
-                            <span style="background-color: #F16D24" class="sub-title"> it solutions</span>
-                            <h1>Communication IT Solution</h1>
+                            <span style="background-color: #F16D24" class="sub-title">Let's open the IT world</span>
+                            <h1 style="font-size: 80pt">Communication IT</h1>
                             <ul class="button">
-                                <li><a href="#" class="main-btn btn-red-light">get started now</a></li>
-                                <li><a href="#" class="main-btn btn-blue-light">explore more</a></li>
+                                <li><a href="{{route('it.service')}}" style="text-decoration: none" class="main-btn btn-red-light">সার্ভিস সমূহ</a></li>
+                                <li><a href="{{route('traning.index')}}" style="text-decoration: none" class="main-btn btn-blue-light">ট্রেনিং সমূহ</a></li>
                             </ul>
                         </div>
                     </div>
@@ -24,11 +24,11 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-9">
                         <div class="hero-content text-center">
-                            <span class="sub-title">professional it solutions</span>
-                            <h1>Communication IT Solution</h1>
+                            <span style="background-color: #F16D24" class="sub-title">Let's open the IT world</span>
+                            <h1 style="font-size: 80pt">Communication IT</h1>
                             <ul class="button">
-                                <li><a href="#" class="main-btn btn-blue-light">get started now</a></li>
-                                <li><a href="#" class="main-btn btn-gray-light">explore more</a></li>
+                                <li><a href="{{route('it.service')}}" style="text-decoration: none" class="main-btn btn-red-light">সার্ভিস সমূহ</a></li>
+                                <li><a href="{{route('traning.index')}}" style="text-decoration: none" class="main-btn btn-blue-light">ট্রেনিং সমূহ</a></li>
                             </ul>
                         </div>
                     </div>
@@ -47,12 +47,9 @@
                 <div class="text-wrapper mb-50">
                     <div class="section-title mb-25">
                         <span style="background-color: #F16D24" class="sub-title sub-title-bg blue-light-bg">what  we  offer</span>
-                        <h2 class="text-underline">Best Categoris For Your 
-                            Software Solutions</h2>
+                        <h2 class="text-underline">Best IT Service for your Growth 🎯</h2>
                     </div>
-                    <p>Sed perspiciatis unde omnis natus voluptate accusantie 
-                        doloremque laudantium totam rem aperiam eaque quaea
-                        vtore eritatis quasi architecto beatae vitae</p>
+                    <p>"Communication IT" Company  is working on IT Services, Software Services, IT Training, and IT Consultancy for local & corporate clients. Communication IT Training Institute is a part of Communication IT company.</p>
                     <div class="experience-box">
                         <div class="year">
                             <h2>3</h2>
@@ -60,9 +57,7 @@
                         <div class="text">
                             <h4>Years Of Experience
                                 We Provides</h4>
-                            <p>Perspiciatis unde onatus 
-                                voluptate dolore laudantie
-                                totam rem aperiam</p>
+                            <p>IT Services, Software Services, IT Training, and IT Consultancy</p>
                         </div>
                     </div>
                     <ul class="button">
@@ -142,15 +137,13 @@
                 <div class="col-lg-4">
                     <div class="text-wrapper mb-40">
                         <div class="section-title section-title-white mb-20">
-                            <span class="sub-title red-dark text-underline">Our popular services</span>
-                            <h2 class="text-uppercase">Best Professional
-                                IT Solutiuons
+                            <span class="sub-title red-dark text-underline">Our popular tranings</span>
+                            <h2 class="text-uppercase">Best
+                                IT traning for career development
                                 </h2>
                         </div>
-                        <p>Sed perspiciatis unde omniste natus voluptate 
-                            accusantiuy doloremque laudantium totam aperm
-                            eaque quae ainvtore veritatis architecto</p>
-                        <a href="service-1.html" class="main-btn">explore more services</a>
+                        <p>"Communication IT Training Institute" is a part of "Communication IT" company.</p>
+                        <a href="{{route('traning.course')}}" style="text-decoration: none" class="main-btn">"Communication IT Training Institute"</a>
                     </div>
                 </div>
                 <div class="col-lg-8">
@@ -162,7 +155,7 @@
                                         <i class="flaticon-puzzle-1"></i>
                                     </div>
                                     <div class="text">
-                                        <h3 class="title"><a href="service-details.html" class="text-underline">Infrastructure</a></h3>
+                                        <h3 class="title"><a href="service-details.html" class="text-underline">Courses</a></h3>
                                         <p>But I must explain to you how all this mistaken ideofe denouncing pleasure</p>
                                     </div>
                                 </div>
@@ -173,7 +166,7 @@
                                         <i class="flaticon-solution-1"></i>
                                     </div>
                                     <div class="text">
-                                        <h3 class="title"><a href="service-details.html" class="text-underline">IT Engineering</a></h3>
+                                        <h3 class="title"><a href="service-details.html" class="text-underline">Free Seminer</a></h3>
                                         <p>But I must explain to you how all this mistaken ideofe denouncing pleasure</p>
                                     </div>
                                 </div>
@@ -184,7 +177,7 @@
                                         <i class="flaticon-cyber-security"></i>
                                     </div>
                                     <div class="text">
-                                        <h3 class="title"><a href="service-details.html" class="text-underline">cyber security</a></h3>
+                                        <h3 class="title"><a href="service-details.html" class="text-underline">Students FeedBack</a></h3>
                                         <p>But I must explain to you how all this mistaken ideofe denouncing pleasure</p>
                                     </div>
                                 </div>
@@ -195,7 +188,7 @@
                                         <i class="flaticon-internet-of-things"></i>
                                     </div>
                                     <div class="text">
-                                        <h3 class="title"><a href="service-details.html" class="text-underline">Apps Development</a></h3>
+                                        <h3 class="title"><a href="service-details.html" class="text-underline">Instructor</a></h3>
                                         <p>But I must explain to you how all this mistaken ideofe denouncing pleasure</p>
                                     </div>
                                 </div>
@@ -213,8 +206,8 @@
         <div class="row justify-content-center">
             <div class="col-lg-7">
                 <div class="section-title text-center mb-45">
-                    <span class="sub-title red-dark">popular partners</span>
-                    <h2 class="text-uppercase">We have <span class="red-dark">2563+</span> world wide clients</h2>
+                    <span class="sub-title red-dark">popular clients</span>
+                    <h2 class="text-uppercase">We have <span class="red-dark">100+</span> corporate clients</h2>
                 </div>
             </div>
         </div>

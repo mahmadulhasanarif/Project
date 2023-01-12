@@ -11,6 +11,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="row">
             <div class="col-lg-6">
                 <div class="block-style-eighteen animate-icon d-flex align-items-center mb-30">
@@ -18,7 +19,7 @@
                         <img src="{{asset('frontend/assets/images/icon/icon-5.png')}}" alt="">
                     </div>
                     <div class="text">
-                        <h3 class="title"><a href="{{route('serviceDetails')}}" class="text-underline">Web Design</a></h3>
+                        <h3 class="title"><a href="{{route('serviceDetails')}}" class="text-underline">Website Design And Development</a></h3>
                         <p>Sed ut perspiciatis unde omnis istere errorsit voluptatem accusa</p>
                         <a href="{{route('serviceDetails')}}" class="btn-link">read more</a>
                     </div>
@@ -30,7 +31,7 @@
                         <img src="{{asset('frontend/assets/images/icon/icon-6.png')}}" alt="">
                     </div>
                     <div class="text">
-                        <h3 class="title"><a href="{{route('serviceDetails')}}" class="text-underline">Mobile Application Design</a></h3>
+                        <h3 class="title"><a href="{{route('serviceDetails')}}" class="text-underline">Customized Software Development</a></h3>
                         <p>Sed ut perspiciatis unde omnis istere errorsit voluptatem accusa</p>
                         <a href="{{route('serviceDetails')}}" class="btn-link">read more</a>
                     </div>
@@ -42,7 +43,7 @@
                         <img src="{{asset('frontend/assets/images/icon/icon-7.png')}}" alt="">
                     </div>
                     <div class="text">
-                        <h3 class="title"><a href="{{route('serviceDetails')}}" class="text-underline">Data & Web Security</a></h3>
+                        <h3 class="title"><a href="{{route('serviceDetails')}}" class="text-underline">E-Commerce Development</a></h3>
                         <p>Sed ut perspiciatis unde omnis istere errorsit voluptatem accusa</p>
                         <a href="{{route('serviceDetails')}}" class="btn-link">read more</a>
                     </div>
@@ -54,7 +55,7 @@
                         <img src="{{asset('frontend/assets/images/icon/icon-8.png')}}" alt="">
                     </div>
                     <div class="text">
-                        <h3 class="title"><a href="{{route('serviceDetails')}}" class="text-underline">Web Development</a></h3>
+                        <h3 class="title"><a href="{{route('serviceDetails')}}" class="text-underline">ERP Solution</a></h3>
                         <p>Sed ut perspiciatis unde omnis istere errorsit voluptatem accusa</p>
                         <a href="{{route('serviceDetails')}}" class="btn-link">read more</a>
                     </div>
@@ -78,7 +79,7 @@
                         <img src="{{asset('frontend/assets/images/icon/icon-10.png')}}" alt="">
                     </div>
                     <div class="text">
-                        <h3 class="title"><a href="{{route('serviceDetails')}}" class="text-underline">Desktop Computing</a></h3>
+                        <h3 class="title"><a href="{{route('serviceDetails')}}" class="text-underline">Cloud & Cyber Security</a></h3>
                         <p>Sed ut perspiciatis unde omnis istere errorsit voluptatem accusa</p>
                         <a href="{{route('serviceDetails')}}" class="btn-link">read more</a>
                     </div>

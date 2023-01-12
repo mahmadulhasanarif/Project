@@ -8,12 +8,12 @@
             <div class="col-lg-7 col-md-8">
                 <div class="section-title section-title-white mb-90">
                     <span style="background-color: #F16D24" class="sub-title sub-title-bg blue-light-bg">IT Services</span>
-                    <h2 style="color: #F16D24" class="text-underline">Communication IT Solution Services</h2>
+                    <h2 style="color: #F16D24" class="text-underline">Communication IT Services</h2>
                 </div>
             </div>
             <div class="col-lg-5 col-md-4">
                 <div class="button float-md-right mb-60">
-                    <a href="service-2.html" class="main-btn btn-red">View more services</a>
+                    <a href="{{route('software.service')}}" class="main-btn btn-red">View software services</a>
                 </div>
             </div>
         </div>
@@ -24,8 +24,7 @@
                         <i class="flaticon-cyber-security-2"></i>
                     </div>
                     <div class="text">
-                        <h3 class="title"><a href="{{route('serviceDetails')}}" class="text-underline">Information Security 
-                            Governance</a></h3>
+                        <h3 class="title"><a href="{{route('serviceDetails')}}" class="text-underline">Office Network Setup & Maintenance</a></h3>
                         <p>Sed perspiciatis unde oms 
                             natus sit voluptate accusate
                             doloremque laudantium</p>
@@ -33,14 +32,15 @@
                     </div>
                 </div>
             </div>
+
+
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="block-style-nineteen animate-icon mb-40">
                     <div class="icon red-dark-bg">
                         <i class="flaticon-padlock"></i>
                     </div>
                     <div class="text">
-                        <h3 class="title"><a href="{{route('serviceDetails')}}"  class="text-underline">Defense and Forensics 
-                            Cyber Analyst</a></h3>
+                        <h3 class="title"><a href="{{route('serviceDetails')}}"  class="text-underline">CCTV, IP Camera Installation & Maintenance</a></h3>
                         <p>Sed perspiciatis unde oms 
                             natus sit voluptate accusate
                             doloremque laudantium</p>
@@ -54,8 +54,7 @@
                         <i class="flaticon-cyber-security-3"></i>
                     </div>
                     <div class="text">
-                        <h3 class="title"><a href="{{route('serviceDetails')}}" class="text-underline">Information Security
-                            Development</a></h3>
+                        <h3 class="title"><a href="{{route('serviceDetails')}}" class="text-underline">Hardware Setup & Maintenance</a></h3>
                         <p>Sed perspiciatis unde oms 
                             natus sit voluptate accusate
                             doloremque laudantium</p>
@@ -72,8 +71,7 @@
                         <i class="flaticon-cyber-security-4"></i>
                     </div>
                     <div class="text">
-                        <h3 class="title"><a href="{{route('serviceDetails')}}"  class="text-underline">Defense and Forensics 
-                            Cyber Analyst</a></h3>
+                        <h3 class="title"><a href="{{route('serviceDetails')}}"  class="text-underline">Printer, Photocopier Setup & Maintenance</a></h3>
                         <p>Sed perspiciatis unde oms 
                             natus sit voluptate accusate
                             doloremque laudantium</p>
@@ -87,8 +85,7 @@
                         <i class="flaticon-padlock"></i>
                     </div>
                     <div class="text">
-                        <h3 class="title"><a href="{{route('serviceDetails')}}"  class="text-underline">Defense and Forensics 
-                            Cyber Analyst</a></h3>
+                        <h3 class="title"><a href="{{route('serviceDetails')}}"  class="text-underline">Server Setup & Maintenance</a></h3>
                         <p>Sed perspiciatis unde oms 
                             natus sit voluptate accusate
                             doloremque laudantium</p>
@@ -103,8 +100,7 @@
                         <i class="flaticon-cyber-security-4"></i>
                     </div>
                     <div class="text">
-                        <h3 class="title"><a href="{{route('serviceDetails')}}"  class="text-underline">Defense and Forensics 
-                            Cyber Analyst</a></h3>
+                        <h3 class="title"><a href="{{route('serviceDetails')}}"  class="text-underline">Managed IT Support</a></h3>
                         <p>Sed perspiciatis unde oms 
                             natus sit voluptate accusate
                             doloremque laudantium</p>
