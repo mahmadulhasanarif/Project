@@ -1,7 +1,9 @@
  
  <?php
-$id = Auth::user()->id;
-$user = App\Models\User::find($id);
+if(Auth::user()){
+    $id = Auth::user()->id;
+    $user = App\Models\User::find($id);
+}
 
 
 ?>
@@ -16,7 +18,7 @@ $user = App\Models\User::find($id);
                             <img src="{{ (!empty($user->image))? url('upload/user_images/'.$user->image):url(asset('assets/images/users/avatar-1.jpg')) }}" alt="" class="avatar-md rounded-circle">
                         </div>
                         <div class="mt-3">
-                            <h4 class="font-size-16 mb-1">{{$user->name}}</h4>
+                            <h4 class="font-size-16 mb-1">{{$user->name ?? "UnOthorize User"}}</h4>
                             <span class="text-muted"><i class="ri-record-circle-line align-middle font-size-14 text-success"></i> Online</span>
                         </div>
                     </div>

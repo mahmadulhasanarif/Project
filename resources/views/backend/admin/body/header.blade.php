@@ -178,8 +178,10 @@
     </div>
 
     @php
-    $id = Auth::user()->id;
-    $adminData = App\Models\User::find($id);
+    if (Auth::user()) {
+        $id = Auth::user()->id;
+        $adminData = App\Models\User::find($id);
+    }
     @endphp
 
     <div class="dropdown d-inline-block user-dropdown">
@@ -187,7 +189,7 @@
             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <img class="rounded-circle header-profile-user" src="{{ (!empty($adminData->image))? url('upload/user_images/'.$adminData->image):url('upload/no_image.jpg') }}"
                 alt="Header Avatar">
-            <span class="d-none d-xl-inline-block ms-1">{{ $adminData->name }}</span>
+            <span class="d-none d-xl-inline-block ms-1">{{ $adminData->name ?? "Empty" }}</span>
             <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
         </button>
         <div class="dropdown-menu dropdown-menu-end">

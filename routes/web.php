@@ -142,6 +142,15 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified', '
         Route::get('seminer', [SeminerController::class, 'index'])->name('seminer.index');
         Route::get('seminer-delete-{id}', [LessonController::class, 'delete'])->name('seminer.delete');
 
+            // Route certificate
+        Route::get('certificate', [CertificateController::class, 'index'])->name('certificate.index');
+        Route::get('certificate-create', [CertificateController::class, 'create'])->name('certificate.create');
+        Route::post('certificate/store', [CertificateController::class, 'store'])->name('certificate.store');
+        Route::get('certificate/{certificate}/edit', [CertificateController::class, 'edit'])->name('certificate.edit');
+        Route::post('certificate/update/{id}', [CertificateController::class, 'update'])->name('certificate.update');
+        Route::get('certificate/delete/{id}', [CertificateController::class, 'delete'])->name('certificate.delete');
+        Route::get('certificate/verify/{id}', [CertificateController::class, 'show'])->name('certificate.show');    
+
 });
 
  // seminer Route 
@@ -157,14 +166,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified', '
     
 
 
-    // Route certificate
-    Route::get('certificate', [CertificateController::class, 'index'])->name('certificate.index');
-    Route::get('certificate-create', [CertificateController::class, 'create'])->name('certificate.create');
-    Route::post('certificate/store', [CertificateController::class, 'store'])->name('certificate.store');
-    Route::get('certificate/{certificate}/edit', [CertificateController::class, 'edit'])->name('certificate.edit');
-    Route::post('certificate/update/{id}', [CertificateController::class, 'update'])->name('certificate.update');
-    Route::get('certificate/delete/{id}', [CertificateController::class, 'delete'])->name('certificate.delete');
-    Route::get('certificate/verify/{id}', [CertificateController::class, 'show'])->name('certificate.show');
+
     Route::get('certificate/search', [CertificateController::class, 'search'])->name('certificate.search');
     Route::get('certificate/verified', [CertificateController::class, 'verified'])->name('certificate.verified');
 

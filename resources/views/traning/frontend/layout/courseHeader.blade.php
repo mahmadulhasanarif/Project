@@ -48,38 +48,9 @@
 	                	<div class="cart_btn">
 							<ul class="cart">
 								<li>
-									<a href="#" class="btn cart_btn flaticon-shopping-bag"><span>5</span></a>
-									<ul class="dropdown_content">
-										<li class="list_content">
-											<a href="#">
-												<img class="float-left" src="http://via.placeholder.com/50x50" alt="50x50">
-												<p>Dolar Sit Amet</p>
-												<small>1 × $7.90</small>
-												<span class="close_icon float-right"><i class="fa fa-plus"></i></span>
-											</a>
-										</li>
-										<li class="list_content">
-											<a href="#">
-												<img class="float-left" src="http://via.placeholder.com/50x50" alt="50x50">
-												<p>Lorem Ipsum</p>
-												<small>1 × $7.90</small>
-												<span class="close_icon float-right"><i class="fa fa-plus"></i></span>
-											</a>
-										</li>
-										<li class="list_content">
-											<a href="#">
-												<img class="float-left" src="http://via.placeholder.com/50x50" alt="50x50">
-												<p>Is simply</p>
-												<small>1 × $7.90</small>
-												<span class="close_icon float-right"><i class="fa fa-plus"></i></span>
-											</a>
-										</li>
-										<li class="list_content">
-											<h5>Subtotal: $57.70</h5>
-											<a href="#" class="btn btn-thm cart_btns">View cart</a>
-											<a href="#" class="btn btn-thm3 checkout_btns">Checkout</a>
-										</li>
-									</ul>
+									<a style="font-color: white" class="list-inline-item list_s flaticon-shopping-bag" href="{{ route('certificate.search') }}"> Certificate verification</a>
+									{{-- <a href="#" class="btn cart_btn flaticon-shopping-bag"><span>5</span></a> --}}
+									
 								</li>
 							</ul>
 						</div>

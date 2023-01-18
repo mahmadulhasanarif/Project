@@ -15,42 +15,7 @@
                     </li>
                     <li class="list-inline-item">
                         <div class="cart_btn">
-                            <ul class="cart">
-                                <li>
-                                    <a href="#" class="btn cart_btn flaticon-shopping-bag"><span>5</span></a>
-                                    <ul class="dropdown_content">
-                                        <li class="list_content">
-                                            <a href="#">
-                                                <img class="float-left" src="http://via.placeholder.com/50x50" alt="50x50">
-                                                <p>Dolar Sit Amet</p>
-                                                <small>1 × $7.90</small>
-                                                <span class="close_icon float-right"><i class="fa fa-plus"></i></span>
-                                            </a>
-                                        </li>
-                                        <li class="list_content">
-                                            <a href="#">
-                                                <img class="float-left" src="http://via.placeholder.com/50x50" alt="50x50">
-                                                <p>Lorem Ipsum</p>
-                                                <small>1 × $7.90</small>
-                                                <span class="close_icon float-right"><i class="fa fa-plus"></i></span>
-                                            </a>
-                                        </li>
-                                        <li class="list_content">
-                                            <a href="#">
-                                                <img class="float-left" src="http://via.placeholder.com/50x50" alt="50x50">
-                                                <p>Is simply</p>
-                                                <small>1 × $7.90</small>
-                                                <span class="close_icon float-right"><i class="fa fa-plus"></i></span>
-                                            </a>
-                                        </li>
-                                        <li class="list_content">
-                                            <h5>Subtotal: $57.70</h5>
-                                            <a href="#" class="btn btn-thm cart_btns">View cart</a>
-                                            <a href="#" class="btn btn-thm3 checkout_btns">Checkout</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
+                            <a style="font-color: white" class="list-inline-item list_s flaticon-shopping-bag" href="{{ route('certificate.search') }}"> Certificate verification</a>
                         </div>
                     </li>
                 </ul><!-- Button trigger modal -->
@@ -176,23 +141,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="list-inline-item dn-1366">
-                        <div class="ht_search_widget">
-                            <div class="header_search_widget">
-                                <form class="form-inline mailchimp_form">
-                                    <input type="email" class="form-control mb-2 mr-sm-2" id="inlineFormInputMail2" placeholder="Search for the software or skills you want to learn">
-                                    <button type="submit" class="btn btn-primary mb-2"><span class="flaticon-magnifying-glass"></span></button>
-                                </form>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-inline-item list_s dib-1366 dn">
-                        <div class="search_overlay home3">
-                              <a id="search-button-listener" class="mk-search-trigger mk-fullscreen-trigger" href="#">
-                                <span id="search-button"><i class="flaticon-magnifying-glass"></i></span>
-                              </a>
-                        </div>
-                    </li>
+                   
                 </ul>
             </div>
             <ul id="respMenu" class="ace-responsive-menu" data-menu-style="horizontal">
